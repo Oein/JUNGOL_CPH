@@ -23,7 +23,7 @@
 
 
 #include "./solution.hpp"
-#include "json.hpp"
+#include "./json.hpp"
 #include <future>
 #include <fstream>
 #include <iostream>
