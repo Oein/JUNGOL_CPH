@@ -1,11 +1,24 @@
+// main.cpp
+#include <future>
+#include <fstream>
 #include <iostream>
-
+#include <filesystem>
+#include <string>
+#include <launch.h>
+#include <chrono>
+#include <vector>
+#include <sys/resource.h>
+#include <sys/time.h>
+// solution.cpp
+#include <iostream>
+// config defines
 #define PROBLEM 1000
 #define TIMEOUT 1000LL
+#define SOLUTION_FUNCTION main_
 
 using namespace std;
 
-int solution() {
+int main_() {
     int a, b;
     cin >> a >> b;
     cout << a + b;
@@ -15,7 +28,7 @@ int solution() {
 #ifdef ONLINE_JUDGE
 int main() {
     ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-    solution();
+    main_();
     return 0;
 }
 #endif

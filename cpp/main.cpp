@@ -129,7 +129,7 @@ void runTestcase(const FileEntry& entry) {
     long startMemoryUsage = getMemoryUsage();
     
     // Threading
-    future<int>* hThread = new future<int>(async(launch::async, solution));
+    future<int>* hThread = new future<int>(async(launch::async, SOLUTION_FUNCTION));
     
     // Timeout
     bool timeouted = hThread->wait_for(milliseconds(TIMEOUT)) == future_status::timeout;
