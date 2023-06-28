@@ -20,8 +20,6 @@
                                                             
  */
 
-
-
 #include "./solution.hpp"
 #include "./json.hpp"
 #include <future>
@@ -36,6 +34,7 @@
 #include <sys/time.h>
 #include <curl/curl.h>
 
+int PROBLEM = 1000;
 
 using namespace std;
 using namespace std::chrono;
@@ -90,9 +89,7 @@ void printInfo() {
     tm* now = localtime(&t);
     
     printf(
-           "\n%sCPH for C++\n%s        by Oein\n\n Running test on %4d/%2d/%2d %2d:%2d:%2d\n\n",
-           spacer,
-           spacer,
+           "  Running test on %4d/%2d/%2d %2d:%2d:%2d\n\n",
            now->tm_year + 1900,
            now->tm_mon + 1,
            now->tm_mday,
@@ -243,7 +240,7 @@ void ensureExample() {
     lastRequestExampleProblemStream.close();
     if(lastRequestExampleProblem != to_string(PROBLEM)) {
         delete_dir_content(fs::path(testCasesPath));
-        printf("[!] Fetch example data for problem %d\n\n",PROBLEM);
+        printf("[🌍] Fetch example data for problem %d\n\n",PROBLEM);
         fetchExample();
         
         ofstream lastRequestExampleProblemStream(lastRequestedProblemPath);
@@ -252,6 +249,7 @@ void ensureExample() {
     }
 }
 int main() {
+    cin >> PROBLEM;
     printInfo();
     ensureExample();
     getTestCases();

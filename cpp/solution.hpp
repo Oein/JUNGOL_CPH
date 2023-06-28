@@ -4,7 +4,6 @@
 #include <iostream>
 #include <filesystem>
 #include <string>
-#include <launch.h>
 #include <chrono>
 #include <vector>
 #include <sys/resource.h>
@@ -12,7 +11,6 @@
 // solution.cpp
 #include <iostream>
 // config defines
-#define PROBLEM 1000
 #define TIMEOUT 1000LL
 #define SOLUTION_FUNCTION main_
 
